@@ -28,7 +28,7 @@ def process(time, rdd):
         #rowRdd.pprint()
         wordsDataFrame = sqlContext.createDataFrame(rowRdd)
         wordsDataFrame.show(20,False)
-        wordsDataFrame.write.json('/datacartridge/streamData/Raw/'+topic,mode='append')
+        wordsDataFrame.write.json('<path/to/hdfs/location/'+topic,mode='append')
 
         # Creates a temporary view using the DataFrame.
         #wordsDataFrame.createOrReplaceTempView("words")
